@@ -1,7 +1,6 @@
 import random
 print("Rock, Paper, Scissors")
 options = ["rock", "paper", "scissors"]
-choices = ["yes","no"]
 while True:
     player = input("Enter your choice [rock/paper/scissors]: ").lower()
     if player not in options:
@@ -22,12 +21,14 @@ while True:
     else:
         print("Computer wins.")
 
-    play_again = input("Do you want to play again? [yes/no]: ").lower()
-    if play_again not in choices:
-         print("Invalid choice. Try again.")
-         continue
+    while True:
+        play_again = input("Do you want to play again? [yes/no]: ").lower()
+        if play_again == "yes":
+            break
+        if play_again == "no":
+            exit()
+        else:
+            print("invalid input")
 
-    if play_again == "no":
-        break
 
 print("Thanks for playing.")
